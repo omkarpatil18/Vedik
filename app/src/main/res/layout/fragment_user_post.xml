@@ -1,0 +1,196 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="in.myvedik.android.vedik.UserPostActivity">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="3dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+        <ScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scrollbarStyle="insideOverlay">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    style="@style/Widget.CardContent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:id="@+id/uploader_info"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/uploader_avatar"
+                        android:layout_width="@dimen/avatar_size"
+                        android:layout_height="@dimen/avatar_size"
+                        android:layout_marginRight="30dp"
+                        android:layout_marginEnd="30dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:src="@drawable/dummy_me"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"/>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_toEndOf="@id/uploader_avatar"
+                        android:layout_toRightOf="@id/uploader_avatar">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Omkar Patil"
+                            android:id="@+id/uploader_name"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                            android:layout_marginBottom="5dp"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Photographer"
+                            android:id="@+id/uploader_work_profile"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+                    </LinearLayout>
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentTop="true"
+                        app:cardCornerRadius="2dp"
+                        app:cardElevation="3dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Photography"
+                            android:textColor="@color/colorPrimary"
+                            android:id="@+id/upload_vedik"/>
+
+                    </android.support.v7.widget.CardView>
+
+                </RelativeLayout>
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/uploader_info"
+                    android:id="@+id/post_container_card">
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/post_fragment_container">
+
+
+                    </FrameLayout>
+
+                </android.support.v7.widget.CardView>
+
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_below="@id/post_container_card">
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/caption_post_card"
+                        app:cardElevation="3dp"
+                        app:cardCornerRadius="3dp"
+                        android:layout_alignParentTop="true">
+
+                        <Button
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Just another picture description."
+                            android:id="@+id/caption_post"
+                            android:drawableRight="@drawable/ic_arrow_drop_down_black_24dp"
+                            android:drawableEnd="@drawable/ic_arrow_drop_down_black_24dp"
+                            android:padding="1dp"
+                            android:gravity="center"
+                            android:background="@color/cardview_light_background"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+
+                    </android.support.v7.widget.CardView>
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_below="@+id/caption_post_card"
+                        android:id="@+id/post_details_fragment_container">
+
+                    </FrameLayout>
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:cardElevation="3dp"
+                        android:layout_below="@id/post_details_fragment_container">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <RatingBar
+                                android:layout_width="200dp"
+                                android:layout_height="10dp"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentLeft="true"
+                                android:numStars="10"
+                                android:layout_margin="5dp"
+                                android:id="@+id/rating_bar"
+                                android:rating="10"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/cheers"
+                                android:text="3 cheers!"
+                                android:layout_toRightOf="@id/rating_bar"
+                                android:layout_toEndOf="@id/rating_bar"/>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Awawrds: Dope Shooter Award"
+                                android:layout_below="@id/rating_bar"
+                                android:id="@+id/awards"/>
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/awards"
+                                android:id="@+id/comments_fragment_container">
+
+
+                            </FrameLayout>
+                        </RelativeLayout>
+
+                    </android.support.v7.widget.CardView>
+
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+        </ScrollView>
+    </android.support.v7.widget.CardView>
+
+</RelativeLayout>
+
